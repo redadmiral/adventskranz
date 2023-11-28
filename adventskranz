@@ -34,9 +34,12 @@ candlesum(){
   christmas=$(date -d $year-12-24 +%s)
   
   i=0
+  fourthad_day=$(date +%d --date "$year-12-24 -$i days")
+
   while [ $(date +%u --date "$year-12-24 -$i days") != "7" ]; do
     i=$(($i+1))
     fourthad_day=$(date +%d --date "$year-12-24 -$i days")
+    echo test: $fourthad_day
   done
   
   thirdad_day=$(date +%d --date "$year-12-$fourthad_day -1 week")
