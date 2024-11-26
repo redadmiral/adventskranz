@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
 # GPL v3 license
 
-VERSION="0.1"
+VERSION="0.2"
 
 usage () {
     cat << EOF >&2
@@ -39,7 +39,6 @@ candlesum(){
   while [ $(date +%u --date "$year-12-24 -$i days") != "7" ]; do
     i=$(($i+1))
     fourthad_day=$(date +%d --date "$year-12-24 -$i days")
-    echo test: $fourthad_day
   done
   
   thirdad_day=$(date +%d --date "$year-12-$fourthad_day -1 week")
